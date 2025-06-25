@@ -1,11 +1,10 @@
-import React from 'react';
-import CameraView from '../components/Camera/CameraView';
+// In app/page.tsx or pages/index.tsx
+import { WallBallCounter } from '@/components/WallBallCounter';
 
 export default function Home() {
   return (
-    <div className="app-container">
-      <div className="app-title">Wall Ball counter</div>
-      <CameraView />
-    </div>
+    <main className="min-h-screen bg-gray-900">
+      <WallBallCounter />
+    </main>
   );
 }

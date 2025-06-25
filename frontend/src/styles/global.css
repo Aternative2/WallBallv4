@@ -1,0 +1,86 @@
+/* frontend/src/app/globals.css */
+/* This file should be in src/app/ if using App Router, or src/styles/ if using Pages Router */
+
+/* Tailwind CSS imports - REQUIRED */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom global styles */
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-gray-900 text-white;
+  }
+}
+
+/* Component-specific utilities */
+@layer utilities {
+  /* Mirror effect for camera */
+  .mirror {
+    transform: scaleX(-1);
+  }
+  
+  /* Smooth transitions */
+  .transition-smooth {
+    @apply transition-all duration-300 ease-in-out;
+  }
+}
+
+/* Wall Ball Counter specific styles */
+@layer components {
+  /* Stats panel number styling */
+  .stats-number {
+    @apply font-mono text-2xl font-bold;
+  }
+  
+  /* State indicator animations */
+  .pulse-green {
+    @apply animate-pulse bg-green-500;
+  }
+  
+  /* ROI box styling */
+  .roi-box {
+    @apply border-4 border-green-500 rounded-lg;
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+  }
+  
+  /* Debug panel styling */
+  .debug-panel {
+    @apply bg-gray-800 bg-opacity-90 backdrop-blur-sm rounded-lg p-4;
+  }
+}
+
+/* Custom animations */
+@keyframes slideIn {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Loading spinner */
+.spinner {
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  border-top: 3px solid white;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
