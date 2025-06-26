@@ -1,10 +1,11 @@
 // In app/page.tsx or pages/index.tsx
-import { WallBallCounter } from '@/components/WallBallCounter';
+import CameraView from '../components/Camera/CameraView';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-900">
-      <WallBallCounter />
-    </main>
+    <div className="app-container">
+      <div className="app-title">Wall Ball counter</div>
+      <CameraView />
+    </div>
   );
 }

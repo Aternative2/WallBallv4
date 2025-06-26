@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+  const ws = new WebSocket('ws://127.0.0.1:8000/ws/test');
+  ws.onopen = () => { ws.send('hello'); };
+  ws.onmessage = (event) => { alert('Received: ' + event.data); };
+  ws.onerror = (e) => { alert('WebSocket error'); };
+</script>
+</body>
+</html>
